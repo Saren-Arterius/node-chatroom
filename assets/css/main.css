@@ -1,0 +1,27 @@
+.nav-wrapper {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.chat-time {
+  width: 20%;
+}
+.chat-name {
+  width: 10%;
+}
+.chat-message {
+  word-break: break-all;
+}
+#chat-table-container {
+  max-height: 40em;
+  overflow: auto;
+}
+#nav-mobile > li {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+#total-chats-rank td {
+  padding: 5px;
+}
+#max-cps-rank td {
+  padding: 5px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test node.js chatroom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Chatroom</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>System load: <span id="system-load">0</span> (1 min)</li>
+          <li>CPS: <span id="cps">0</span></li>
+          <li>Online: <span id="online">0</span></li>
+          <li>Created by Saren</li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col l9 s12">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <table class="hoverable">
+              <thead>
+                <tr>
+                  <th class="chat-name">Name</th>
+                  <th class="chat-message">Message</th>
+                  <th class="chat-time">Date</th>
+                </tr>
+              </thead>
+            </table>
+            <div id="chat-table-container">
+              <table class="hoverable" id="chat-table">
+
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col l3 s12">
+              <i class="mdi-action-account-circle prefix"></i>
+              <input id="name-input" type="text" class="validate" length="16" maxlength="16">
+              <label for="name-input">Name</label>
+            </div>
+            <div class="input-field col l7 s12">
+              <i class="mdi-editor-mode-edit prefix"></i>
+              <input id="message-input" type="text" class="validate" length="140" maxlength="140">
+              <label for="message-input">Message</label>
+            </div>
+            <div class="col l2 s12" style="text-align: right;">
+              <button class="btn waves-effect waves-light btn-large" id="submit-btn" style="width: 100%;">Submit
+                <i class="mdi-content-send right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col l3 s12">
+          <div class="card-panel grey lighten-5 z-depth-5">
+            <div id="max-cps-table" style="display: none;">
+              <table class="hoverable">
+                <thead>
+                  <tr>
+                    <th>IP</th>
+                    <th>Max CPS</th>
+                  </tr>
+                </thead>
+                <tbody id="max-cps-rank">
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-panel grey lighten-5 z-depth-5">
+            <div id="total-chats-table" style="display: none;">
+              <table class="hoverable">
+                <thead>
+                  <tr>
+                    <th>IP</th>
+                    <th>Total chats</th>
+                  </tr>
+                </thead>
+                <tbody id="total-chats-rank">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2015 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>
