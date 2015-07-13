@@ -5,6 +5,9 @@ var io = require('socket.io');
 var exec = require('child_process').exec;
 
 
+var BIND_ADDRESS = process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0";
+var SERVER_PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8001;
+
 var SAVE_MIN_INTERVAL = 5 * 1000;
 var chatsLastSecond = 0;
 
@@ -94,7 +97,7 @@ var server = http.createServer(function(request, response) {
 });
 
 
-server.listen(8001);
+server.listen(SERVER_PORT);
 var ioServer = io.listen(server);
 
 function findClientsSocket(roomId, namespace) {
