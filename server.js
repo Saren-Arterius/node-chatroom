@@ -179,7 +179,7 @@ function sendStatus(socket) {
 setInterval(sendStatus, 1000);
 
 ioServer.sockets.on('connection', function(socket) {
-  var clientIp = socket.request.connection.remoteAddress || socket.handshake.headers['x-real-ip'];
+  var clientIp = socket.handshake.headers['x-real-ip'] || socket.request.connection.remoteAddress;
   console.log("New connection from " + clientIp);
   var noIPChats = [];
   for (var i in chats) {
